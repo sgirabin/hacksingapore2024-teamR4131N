@@ -1,54 +1,81 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>walktogether.sg - Sign Up</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>walktogether.sg - Listen, Serve, Empower, Growth</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap core CSS -->
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Additional CSS Files -->
+        <link href="/assets/css/fontawesome.css" rel="stylesheet"/>
+        <link href="/assets/css/templatemo-scholar.css" rel="stylesheet"/>
+        <link href="/assets/css/owl.css" rel="stylesheet"/>
+        <link href="/assets/css/animate.css" rel="stylesheet"/>
+        <link href="https://unpkg.com/swiper@7/swiper-bundle.min.css"  rel="stylesheet"/>
+
+    </head>
+
     <body>
-        <h1>Sign Up</h1>
 
-        <p th:text="${message}"></p>
+        <div th:replace="fragments/page-header :: page-header"></div>
 
-        <div th:if="${#strings.isEmpty(message)}">
-
-            <form action="#" th:action="@{/signup}" th:object="${user}" method="post">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" th:field="*{fullName}" required />
-                <br />
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" th:field="*{email}" required />
-                <br />
-
-                <label for="dateOfBirth">Date of Birth:</label>
-                <input type="date" id="dateOfBirth" th:field="*{dateOfBirth}" required />
-                <br />
-
-                <label for="nationality">Nationality:</label>
-                <select id="nationality" th:field="*{nationality}" required>
-                    <option value="SINGAPORE_CITIZEN">Singapore Citizen</option>
-                    <option value="SINGAPORE_PR">Singapore PR</option>
-                    <option value="FOREIGNER">Foreigner</option>
-                </select>
-                <br />
-
-                <label for="contactNo">Contact No:</label>
-                <input type="text" id="contactNo" th:field="*{contactNo}" required />
-                <br />
-
-                <label for="gender">Gender:</label>
-                <select id="gender" th:field="*{gender}" required>
-                    <option value="MALE">Male</option>
-                    <option value="FEMALE">Female</option>
-                </select>
-                <br />
-
-                <button type="submit">Sign Up</button>
-            </form>
-
+        <div class="main-banner" id="top">
         </div>
 
+        <div class="services section" id="services">
+            <div class="container">
+                <div class="row">
+                    <p th:text="${message}"></p>
 
+                    <div th:if="${#strings.isEmpty(message)}">
 
+                        <form action="#" th:action="@{/signup}" th:object="${user}" method="post">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" th:field="*{fullName}" required />
+                            <br />
+
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" th:field="*{email}" required />
+                            <br />
+
+                            <label for="dateOfBirth">Date of Birth:</label>
+                            <input type="date" id="dateOfBirth" th:field="*{dateOfBirth}" required />
+                            <br />
+
+                            <label for="nationality">Nationality:</label>
+                            <select id="nationality" th:field="*{nationality}" required>
+                                <option value="SINGAPORE_CITIZEN">Singapore Citizen</option>
+                                <option value="SINGAPORE_PR">Singapore PR</option>
+                                <option value="FOREIGNER">Foreigner</option>
+                            </select>
+                            <br />
+
+                            <label for="contactNo">Contact No:</label>
+                            <input type="text" id="contactNo" th:field="*{contactNo}" required />
+                            <br />
+
+                            <label for="gender">Gender:</label>
+                            <select id="gender" th:field="*{gender}" required>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                            </select>
+                            <br />
+
+                            <button type="submit">Sign Up</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="fragments/page-footer :: page-footer"></div>
     </body>
 </html>
+

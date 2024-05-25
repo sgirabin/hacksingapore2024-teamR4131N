@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Volunteer Opportunities</title>
+    </head>
+    <body>
+        <h1>Volunteer Opportunities</h1>
+        <div th:each="opportunity : ${opportunities}">
+            <h2 th:text="${opportunity.title}">Title</h2>
+            <p th:text="${opportunity.description}">Description</p>
+            <p th:text="${opportunity.location}">Location</p>
+            <p th:text="${opportunity.date}">Date</p>
+        </div>
+    </body>
+</html>

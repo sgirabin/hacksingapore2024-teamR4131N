@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Forum</title>
+</head>
+<body>
+<h1>Forum</h1>
+<div th:each="post : ${posts}">
+    <h2 th:text="${post.title}">Title</h2>
+    <p th:text="${post.content}">Content</p>
+    <p th:text="${post.author}">Author</p>
+    <p th:text="${post.createdAt}">Created At</p>
+</div>
+</body>
+</html>
