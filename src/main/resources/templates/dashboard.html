@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Admin Dashboard</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Active Users</h5>
+                    <p class="card-text" th:text="${activeUsers}">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h2>Volunteer Opportunity Statistics</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Opportunity</th>
+                    <th>Volunteers</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="stat : ${opportunityStats}">
+                    <td th:text="${stat['title']}">Opportunity Title</td>
+                    <td th:text="${stat['volunteers']}">Number of Volunteers</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

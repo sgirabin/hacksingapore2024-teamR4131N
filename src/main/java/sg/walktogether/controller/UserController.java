@@ -1,6 +1,7 @@
 package sg.walktogether.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +19,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
     @GetMapping("/signup")
     public String showSignUpForm(Model model) {
         model.addAttribute("user", new User());
@@ -30,6 +34,7 @@ public class UserController {
             model.addAttribute("message", result.getAllErrors().toString());
             return "signup";
         }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.saveUser(user);
         model.addAttribute("message", "User registered successfully");
         return "signup";

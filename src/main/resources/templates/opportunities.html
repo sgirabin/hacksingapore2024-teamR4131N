@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Volunteer Opportunities</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Manage Volunteer Opportunities</h1>
+    <a href="/admin/opportunities/new" class="btn btn-primary mb-3">Create New Opportunity</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="opportunity : ${opportunities}">
+            <td th:text="${opportunity.title}">Title</td>
+            <td th:text="${opportunity.description}">Description</td>
+            <td th:text="${opportunity.location}">Location</td>
+            <td th:text="${opportunity.date}">Date</td>
+            <td>
+                <a th:href="@{/admin/opportunities/edit/{id}(id=${opportunity.id})}" class="btn btn-warning">Edit</a>
+                <a th:href="@{/admin/opportunities/delete/{id}(id=${opportunity.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+s

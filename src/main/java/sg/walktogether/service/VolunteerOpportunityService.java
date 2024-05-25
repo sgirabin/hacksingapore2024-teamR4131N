@@ -6,6 +6,7 @@ import sg.walktogether.entity.VolunteerOpportunity;
 import sg.walktogether.repository.VolunteerOpportunityRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VolunteerOpportunityService {
@@ -19,5 +20,13 @@ public class VolunteerOpportunityService {
 
     public List<VolunteerOpportunity> getAllOpportunities() {
         return volunteerOpportunityRepository.findAll();
+    }
+
+    public Optional<VolunteerOpportunity> findById(Long id) {
+        return volunteerOpportunityRepository.findById(id);
+    }
+
+    public void deleteById(Long id) {
+        volunteerOpportunityRepository.deleteById(id);
     }
 }
