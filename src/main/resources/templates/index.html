@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>WalkTogether.sg</title>
+    <title>Walk Together SG</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
 </head>
 <body>
 <header>
+    <!-- Top Menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">WalkTogether.sg</a>
+        <a class="navbar-brand" href="/">walktogether.sg</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/signup">Signup</a>
+                    <a class="nav-link" href="/volunteer">Volunteer Opportunities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/forum">Forum</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup">Sign Up</a>
                 </li>
             </ul>
         </div>
@@ -33,24 +40,24 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="/images/slide1.jpg" alt="First slide">
+                <img class="d-block w-100" src="https://via.placeholder.com/1200x500" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Community Engagement</h5>
-                    <p>“The greatness of a community is most accurately measured by the compassionate actions of its members.”</p>
+                    <h5>Engage with Your Community</h5>
+                    <p>Together we can make a difference.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/images/slide2.jpg" alt="Second slide">
+                <img class="d-block w-100" src="https://via.placeholder.com/1200x500" alt="Second slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Volunteer Opportunities</h5>
-                    <p>“Volunteers do not necessarily have the time; they just have the heart.”</p>
+                    <p>Find ways to give back to your community.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/images/slide3.jpg" alt="Third slide">
+                <img class="d-block w-100" src="https://via.placeholder.com/1200x500" alt="Third slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Active Participation</h5>
-                    <p>“The best way to find yourself is to lose yourself in the service of others.”</p>
+                    <h5>Connect with Others</h5>
+                    <p>Join our forum and share your thoughts.</p>
                 </div>
             </div>
         </div>
@@ -83,7 +90,7 @@
     <section class="mt-5">
         <h2>Active Members</h2>
         <div th:each="member : ${activeMembers}">
-            <p th:text="${member.name}">Member Name</p>
+            <p th:text="${member.fullName}">Member Name</p>
         </div>
     </section>
 </div>

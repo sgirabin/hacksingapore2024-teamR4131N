@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -44,6 +45,9 @@ public class User {
     public enum Gender {
         MALE, FEMALE
     }
+
+    @Column(name = "role", nullable = false)
+    private String role;
 
     // Getters and setters
     public Long getId() {
@@ -108,5 +112,13 @@ public class User {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

@@ -34,6 +34,7 @@ public class UserController {
             model.addAttribute("message", result.getAllErrors().toString());
             return "signup";
         }
+        user.setRole("USER");
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.saveUser(user);
         model.addAttribute("message", "User registered successfully");
